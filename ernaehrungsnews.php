@@ -110,7 +110,7 @@ function admin_html_menu() {
     $posts = get_latest_posts();
     foreach ($posts as $post){
       $postings .= '<div class="orangi">' . $post['post_title'] .' <span class="eatnewsdate">' . $post["post_date"] . "</span></div>";
-      $postings .= '<div class="eatnewsdesc"><a href="' . $post["guid"] .'">' . substr($post['post_content'],0,get_option('ernaehrungsnews_trimmer')) . "</a>...</div>";
+      $postings .= '<div class="eatnewsdesc"><a href="' . $post["guid"] .'" style="color: black;">' . substr($post['post_content'],0,get_option('ernaehrungsnews_trimmer')) . "</a>...</div>";
     }
      return $postings;
 
