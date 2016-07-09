@@ -82,12 +82,10 @@ function hello_world_html_page() {
   function hello_world() {
 
     $posts = get_latest_posts();
-    
     foreach ($posts as $post){
       $postings .= '<div class="orangi">' . $post['post_title'] .' <span class="eatnewsdate">' . $post["post_date"] . "</span></div>";
-      $postings .= '<div class="eatnewsdesc">' . $post['post_content'] . "</div>";
+      $postings .= '<div class="eatnewsdesc"><a href="' . $post["guid"] .'">' . substr($post['post_content'],0,100) . "</a>...</div>";
     }
-
      return $postings;
 
   }
